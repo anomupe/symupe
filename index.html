@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Samples for SyMuPe: Affective and Controllable Symbolic Music Performance</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="paper-container">
+        <header class="paper-header">
+            <h1>SyMuPe: Affective and Controllable Symbolic Music Performance</h1>
+            <p class="authors">Anonymous Authors</p>
+        </header>
+
+        <section class="abstract">
+            <h2>Abstract</h2>
+            <div class="abstract-text">
+                <p>Emotions are fundamental to the creation and perception of music performances. However, achieving human-like expression and emotion through machine learning models for performance rendering remains a challenging task. In this work, we present SyMuPe, a novel framework for developing and training affective and controllable symbolic piano performance models. Our flagship model, PianoFlow, uses conditional flow matching trained to solve diverse multi-mask performance inpainting tasks. By design, it supports both unconditional generation and infilling of music performance features. For training, we use a curated, cleaned dataset of 3,000 hours of aligned musical scores and expressive MIDI performances. For text and emotion control, we integrate a piano performance emotion classifier and tune PianoFlow with the emotion-weighted Flan-T5 text embeddings provided as conditional inputs. Objective and subjective evaluations against transformer-based baselines and existing models show that PianoFlow not only outperforms other approaches, but also achieves performance quality comparable to human-recorded and transcribed MIDI samples. For emotion control, we present and analyze samples generated under different text conditioning scenarios. The developed model can be integrated into interactive applications, contributing to the creation of more accessible and engaging music performance systems.</p>
+            </div>
+        </section>
+
+        <section class="model-image">
+            <h2>Model Architecture</h2>
+            <div class="image-container">
+                <img src="images/model.png" alt="PianoFlow model architecture diagram">
+                <p class="caption">Figure 1: Overview of the PianoFlow architecture showing the conditional flow matching process and emotion/text control integration.</p>
+            </div>
+        </section>
+
+        <section class="intro-text">
+            <p>This companion webpage contains audio samples referenced in the paper. Below you will find two sets of samples:</p>
+            <ol>
+                <li>Unconditional generation comparison across multiple models</li>
+                <li>Text-conditioned generation samples (to be added)</li>
+            </ol>
+            <p>All samples were synthesized using <a href="https://www.modartt.com/pianoteq_overview">Pianoteq</a>.</p>
+        </section>
+
+        <section class="sample-section">
+            <h2>1. Unconditional Generation Comparison</h2>
+            <div class="table-container">
+                <table class="sample-table">
+                    <thead>
+                        <tr>
+                            <th>Composer & Title</th>
+                            <th>Deadpan</th>
+                            <th>Dataset</th>
+                            <th>PianoFlow</th>
+                            <th>VirtuosoNet</th>
+                            <th>DExter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="period-divider">
+                            <td colspan="6" class="period-header">Baroque Period</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Johann Sebastian Bach</div>
+                                    <div class="work">Fantasia and Fugue in A Minor, BWV 944</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Fantasia_Fugue_A_Minor_BWV944/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Fantasia_Fugue_A_Minor_BWV944/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Fantasia_Fugue_A_Minor_BWV944/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Fantasia_Fugue_A_Minor_BWV944/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Fantasia_Fugue_A_Minor_BWV944/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Johann Sebastian Bach</div>
+                                    <div class="work">Invention No.11 in G minor, BWV782</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Invention_G_minor_BWV782/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Invention_G_minor_BWV782/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Invention_G_minor_BWV782/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Invention_G_minor_BWV782/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Bach_Invention_G_minor_BWV782/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">George Frideric Handel</div>
+                                    <div class="work">Suite No.7 in G Minor, VI. Passacaille</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Handel_Suite_G_Minor_Passacaille/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Handel_Suite_G_Minor_Passacaille/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Handel_Suite_G_Minor_Passacaille/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Handel_Suite_G_Minor_Passacaille/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Handel_Suite_G_Minor_Passacaille/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="period-divider">
+                            <td colspan="6" class="period-header">Classical Period</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwigvan Beethoven</div>
+                                    <div class="work">Piano Sonata No.25 in G, Op.79 (Andante)</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_G_Op79_Andante/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_G_Op79_Andante/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_G_Op79_Andante/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_G_Op79_Andante/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_G_Op79_Andante/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.30 in E Major, Op.109 (III. Andante molto cantabile ed espressivo)</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_E_Op109_III/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_E_Op109_III/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_E_Op109_III/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_E_Op109_III/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Beethoven_Sonata_E_Op109_III/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Wolfgang Amadeus Mozart</div>
+                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Mozart_Sonata_A_K331_Turca/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Mozart_Sonata_A_K331_Turca/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Mozart_Sonata_A_K331_Turca/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Mozart_Sonata_A_K331_Turca/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Mozart_Sonata_A_K331_Turca/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="period-divider">
+                            <td colspan="6" class="period-header">Romantic Period</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Franz Schubert</div>
+                                    <div class="work">Valses sentimentales, D.779 (Waltz in A major)</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Schubert_Waltzes_D779_A_major/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Schubert_Waltzes_D779_A_major/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Schubert_Waltzes_D779_A_major/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Schubert_Waltzes_D779_A_major/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Schubert_Waltzes_D779_A_major/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Frederic Chopin</div>
+                                    <div class="work">Ballade No.1 in G Minor, Op.23</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Ballade_G_Minor_Op23/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Ballade_G_Minor_Op23/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Ballade_G_Minor_Op23/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Ballade_G_Minor_Op23/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Ballade_G_Minor_Op23/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Frederic Chopin</div>
+                                    <div class="work">Nocturne No.1 in B‑flat Minor, Op.9 No.1</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Nocturne_Bb_minor_Op9_1/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Nocturne_Bb_minor_Op9_1/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Nocturne_Bb_minor_Op9_1/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Nocturne_Bb_minor_Op9_1/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Chopin_Nocturne_Bb_minor_Op9_1/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Franz Liszt</div>
+                                    <div class="work">Ballade No.2, S.171</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Ballade_2_S171/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Ballade_2_S171/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Ballade_2_S171/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Ballade_2_S171/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Ballade_2_S171/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Franz Liszt</div>
+                                    <div class="work">Hungarian Rhapsody No.6</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Hungarian_Rhapsody_6/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Hungarian_Rhapsody_6/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Hungarian_Rhapsody_6/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Hungarian_Rhapsody_6/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Liszt_Hungarian_Rhapsody_6/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="period-divider">
+                            <td colspan="6" class="period-header">Impressionism / Early Modern</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Mikhail Glinka</div>
+                                    <div class="work">"The Lark" from A Farewell to Saint Petersburg</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Glinka_Farewell_Lark/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Glinka_Farewell_Lark/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Glinka_Farewell_Lark/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Glinka_Farewell_Lark/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Glinka_Farewell_Lark/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Maurice Ravel</div>
+                                    <div class="work">Jeux d'eau, M.30</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Ravel_Jeux_deau_M30/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Ravel_Jeux_deau_M30/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Ravel_Jeux_deau_M30/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Ravel_Jeux_deau_M30/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Ravel_Jeux_deau_M30/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Erik Satie</div>
+                                    <div class="work">3 Gymnopédies (I. Lent et douloureux)</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Satie_Gymnopedie_1/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Satie_Gymnopedie_1/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Satie_Gymnopedie_1/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Satie_Gymnopedie_1/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Satie_Gymnopedie_1/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="period-divider">
+                            <td colspan="6" class="period-header">Late Romantic / Other Styles</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Sergei Prokofiev</div>
+                                    <div class="work">Toccata, Op.11</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Prokofiev_Toccata_Op11/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Prokofiev_Toccata_Op11/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Prokofiev_Toccata_Op11/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Prokofiev_Toccata_Op11/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Prokofiev_Toccata_Op11/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Edvard Grieg</div>
+                                    <div class="work">Piano Sonata, Op.7 (Andante molto)</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Grieg_Lyric_Butterfly/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Grieg_Lyric_Butterfly/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Grieg_Lyric_Butterfly/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Grieg_Lyric_Butterfly/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Grieg_Lyric_Butterfly/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Edward Elgar</div>
+                                    <div class="work">Salut d'amour, Op.12</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Elgar_Salut_Op12/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Elgar_Salut_Op12/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Elgar_Salut_Op12/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Elgar_Salut_Op12/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Elgar_Salut_Op12/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Scott Joplin</div>
+                                    <div class="work">Maple Leaf Rag</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Joplin_Maple_Leaf/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Joplin_Maple_Leaf/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Joplin_Maple_Leaf/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Joplin_Maple_Leaf/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Joplin_Maple_Leaf/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Mily Balakirev</div>
+                                    <div class="work">Islamey, Op.18</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Balakirev_Islamey_Op18/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Balakirev_Islamey_Op18/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Balakirev_Islamey_Op18/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Balakirev_Islamey_Op18/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Balakirev_Islamey_Op18/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Sergei Rachmaninoff</div>
+                                    <div class="work">Piano Sonata No.2 in B‑flat Minor, Op.36 (Allegro molto)</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Rachmaninoff_Sonata_Bb_Op36_III/dp_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Rachmaninoff_Sonata_Bb_Op36_III/ds_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Rachmaninoff_Sonata_Bb_Op36_III/pf_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Rachmaninoff_Sonata_Bb_Op36_III/vn_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/survey/Rachmaninoff_Sonata_Bb_Op36_III/de_01.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="sample-section">
+            <h2>2. Text-Conditioned Generation</h2>
+
+            <h3>Samples vizualized in Figure 3 and Figure 4(a) in the paper.</h3>
+            <div class="table-container">
+                <table class="text-conditioned-table">
+                    <thead>
+                        <tr>
+                            <th>Composition</th>
+                            <th>Text Control</th>
+                            <th>PianoFlow Sample</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Wolfgang Amadeus Mozart</div>
+                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">3a. Unconditional inference</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Wolfgang Amadeus Mozart</div>
+                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">3b. "anger emotion"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Wolfgang Amadeus Mozart</div>
+                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">3c. "dreamy emotion"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Wolfgang Amadeus Mozart</div>
+                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">3d. "sad emotion"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Wolfgang Amadeus Mozart</div>
+                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">3e. " thunderstorms and lightning"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Wolfgang Amadeus Mozart</div>
+                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">3f. "angry and sad"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Wolfgang Amadeus Mozart</div>
+                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">4a. from "play passionately" to "lento con il piano"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+<!--            <h3>Additional Examples</h3>-->
+<!--            <div class="table-container">-->
+<!--                <table class="text-conditioned-table">-->
+<!--                    <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Composition</th>-->
+<!--                            <th>Text Control</th>-->
+<!--                            <th>PianoFlow Sample</th>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        &lt;!&ndash; Additional Example 1 &ndash;&gt;-->
+<!--                        <tr>-->
+<!--                            <td>-->
+<!--                                <div class="composition-title">-->
+<!--                                    <div class="composer">Wolfgang Amadeus Mozart</div>-->
+<!--                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>-->
+<!--                                </div>-->
+<!--                            </td>-->
+<!--                            <td class="text-prompt">"Fluid tempo like water flowing, with blurred pedal effects"</td>-->
+<!--                            <td>-->
+<!--                                <div class="audio-container">-->
+<!--                                    <audio controls src="samples/text_additional/debussy/pf_fluid.mp3"></audio>-->
+<!--                                    <span class="duration">&#45;&#45;:&#45;&#45;</span>-->
+<!--                                </div>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        &lt;!&ndash; ... more additional examples ... &ndash;&gt;-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </section>-->
+
+        <footer class="page-footer">
+            <p>Supplementary material for peer review. Not for distribution.</p>
+        </footer>
+    </div>
+</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all audio elements
+    const audioElements = document.querySelectorAll('audio');
+
+    audioElements.forEach(audio => {
+        // Create duration display element if not exists
+        if (!audio.nextElementSibling || !audio.nextElementSibling.classList.contains('duration')) {
+            const durationSpan = document.createElement('span');
+            durationSpan.className = 'duration';
+            durationSpan.textContent = '--:--';
+            audio.parentNode.insertBefore(durationSpan, audio.nextSibling);
+        }
+
+        // Update duration when metadata loads
+        audio.addEventListener('loadedmetadata', function() {
+            const duration = audio.duration;
+            const minutes = Math.floor(duration / 60);
+            const seconds = Math.floor(duration % 60).toString().padStart(2, '0');
+            audio.nextElementSibling.textContent = `${minutes}:${seconds}`;
+        });
+
+        // Handle errors
+        audio.addEventListener('error', function() {
+            audio.nextElementSibling.textContent = 'N/A';
+        });
+    });
+});
+</script>
+
+</html>
