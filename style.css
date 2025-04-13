@@ -105,7 +105,7 @@ body {
     vertical-align: middle;
 }
 
-.sample-table tr:nth-child(even) {
+.sample-table tr:nth-child(odd) {
     background-color: var(--light-gray);
 }
 
@@ -233,7 +233,7 @@ body {
 
 /* Period Divider Styles */
 .period-divider {
-    background-color: #f0f4f8;
+    /*background-color: #f0f4f8;*/
     border-left: 4px solid var(--secondary-color);
 }
 
@@ -266,7 +266,7 @@ body {
     vertical-align: middle;
 }
 
-.text-conditioned-table tr:nth-child(even) {
+.text-conditioned-table tr:nth-child(odd) {
     background-color: var(--light-gray);
 }
 
@@ -281,13 +281,13 @@ body {
 .text-conditioned-table th:nth-child(1),
 .text-conditioned-table td:nth-child(1) {
     width: 30%;
-    min-width: 250px;
+    min-width: 200px;
 }
 
 .text-conditioned-table th:nth-child(2),
 .text-conditioned-table td:nth-child(2) {
-    width: 40%;
-    min-width: 300px;
+    width: 35%;
+    min-width: 200px;
 }
 
 .text-conditioned-table th:nth-child(3),

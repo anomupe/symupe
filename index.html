@@ -32,10 +32,10 @@
         <section class="intro-text">
             <p>This companion webpage contains audio samples referenced in the paper. Below you will find two sets of samples:</p>
             <ol>
-                <li>Unconditional generation comparison across multiple models</li>
-                <li>Text-conditioned generation samples (to be added)</li>
+                <li>Unconditional generation comparison across multiple models (samples from the listening test)</li>
+                <li>Text-conditioned generation samples</li>
             </ol>
-            <p>All samples were synthesized using <a href="https://www.modartt.com/pianoteq_overview">Pianoteq</a>.</p>
+            <p>MIDI samples for the listening test were synthesized using <a href="https://www.modartt.com/pianoteq_overview">Pianoteq</a>.</p>
         </section>
 
         <section class="sample-section">
@@ -44,7 +44,7 @@
                 <table class="sample-table">
                     <thead>
                         <tr>
-                            <th>Composer & Title</th>
+                            <th>Composition</th>
                             <th>Deadpan</th>
                             <th>Dataset</th>
                             <th>PianoFlow</th>
@@ -836,17 +836,20 @@
         <section class="sample-section">
             <h2>2. Text-Conditioned Generation</h2>
 
-            <h3>Samples vizualized in Figure 3 and Figure 4(a) in the paper.</h3>
+            <h3>Samples vizualized in Figure 3 and Figure 4 in the paper</h3>
             <div class="table-container">
                 <table class="text-conditioned-table">
                     <thead>
                         <tr>
                             <th>Composition</th>
-                            <th>Text Control</th>
+                            <th>Text Control / Task Type</th>
                             <th>PianoFlow Sample</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr class="period-divider">
+                            <td colspan="3" class="period-header">Figure 3: Emotion and text-controlled inference</td>
+                        </tr>
                         <tr>
                             <td>
                                 <div class="composition-title">
@@ -857,7 +860,7 @@
                             <td class="text-prompt">3a. Unconditional inference</td>
                             <td>
                                 <div class="audio-container">
-                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <audio controls src="samples/control/fig3/uncond.mp3"></audio>
                                     <span class="duration">--:--</span>
                                 </div>
                             </td>
@@ -872,7 +875,7 @@
                             <td class="text-prompt">3b. "anger emotion"</td>
                             <td>
                                 <div class="audio-container">
-                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <audio controls src="samples/control/fig3/anger.mp3"></audio>
                                     <span class="duration">--:--</span>
                                 </div>
                             </td>
@@ -887,7 +890,7 @@
                             <td class="text-prompt">3c. "dreamy emotion"</td>
                             <td>
                                 <div class="audio-container">
-                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <audio controls src="samples/control/fig3/dreamy.mp3"></audio>
                                     <span class="duration">--:--</span>
                                 </div>
                             </td>
@@ -902,7 +905,7 @@
                             <td class="text-prompt">3d. "sad emotion"</td>
                             <td>
                                 <div class="audio-container">
-                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <audio controls src="samples/control/fig3/sad.mp3"></audio>
                                     <span class="duration">--:--</span>
                                 </div>
                             </td>
@@ -917,7 +920,7 @@
                             <td class="text-prompt">3e. " thunderstorms and lightning"</td>
                             <td>
                                 <div class="audio-container">
-                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <audio controls src="samples/control/fig3/thunderstorms_and_lightning.mp3"></audio>
                                     <span class="duration">--:--</span>
                                 </div>
                             </td>
@@ -932,10 +935,13 @@
                             <td class="text-prompt">3f. "angry and sad"</td>
                             <td>
                                 <div class="audio-container">
-                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <audio controls src="samples/control/fig3/sad_and_angry.mp3"></audio>
                                     <span class="duration">--:--</span>
                                 </div>
                             </td>
+                        </tr>
+                        <tr class="period-divider">
+                            <td colspan="3" class="period-header"> Figure 4: Inference with inpainting</td>
                         </tr>
                         <tr>
                             <td>
@@ -947,7 +953,22 @@
                             <td class="text-prompt">4a. from "play passionately" to "lento con il piano"</td>
                             <td>
                                 <div class="audio-container">
-                                    <audio controls src="samples/text_paper/chopin_nocturne/pf_emotion1.mp3"></audio>
+                                    <audio controls src="samples/control/fig4/passionately_to_lento.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.25 in G, Op.79 (Andante)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">4b. Inpaint notes with `pitch <= C4`</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/fig4/inpaint.mp3"></audio>
                                     <span class="duration">--:--</span>
                                 </div>
                             </td>
@@ -956,38 +977,237 @@
                 </table>
             </div>
 
-<!--            <h3>Additional Examples</h3>-->
-<!--            <div class="table-container">-->
-<!--                <table class="text-conditioned-table">-->
-<!--                    <thead>-->
-<!--                        <tr>-->
-<!--                            <th>Composition</th>-->
-<!--                            <th>Text Control</th>-->
-<!--                            <th>PianoFlow Sample</th>-->
-<!--                        </tr>-->
-<!--                    </thead>-->
-<!--                    <tbody>-->
-<!--                        &lt;!&ndash; Additional Example 1 &ndash;&gt;-->
-<!--                        <tr>-->
-<!--                            <td>-->
-<!--                                <div class="composition-title">-->
-<!--                                    <div class="composer">Wolfgang Amadeus Mozart</div>-->
-<!--                                    <div class="work">Piano Sonata No.11 in A Major, K.331 (3rd Movement: Alla Turca)</div>-->
-<!--                                </div>-->
-<!--                            </td>-->
-<!--                            <td class="text-prompt">"Fluid tempo like water flowing, with blurred pedal effects"</td>-->
-<!--                            <td>-->
-<!--                                <div class="audio-container">-->
-<!--                                    <audio controls src="samples/text_additional/debussy/pf_fluid.mp3"></audio>-->
-<!--                                    <span class="duration">&#45;&#45;:&#45;&#45;</span>-->
-<!--                                </div>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        &lt;!&ndash; ... more additional examples ... &ndash;&gt;-->
-<!--                    </tbody>-->
-<!--                </table>-->
-<!--            </div>-->
-<!--        </section>-->
+            <h3>Additional Examples</h3>
+            <div class="table-container">
+                <table class="text-conditioned-table">
+                    <thead>
+                        <tr>
+                            <th>Composition</th>
+                            <th>Text Control</th>
+                            <th>PianoFlow Sample</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="period-divider">
+                            <td colspan="3" class="period-header">Control using available emotions</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.22 in F Major, Op.54 (I. In tempo d'un minuetto)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">Sample from the dataset</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Beethoven_Sonata22_Op54_I/dataset.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.22 in F Major, Op.54 (I. In tempo d'un minuetto)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">Unconditional inference</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Beethoven_Sonata22_Op54_I/uncond.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.22 in F Major, Op.54 (I. In tempo d'un minuetto)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"comical"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Beethoven_Sonata22_Op54_I/comical.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.22 in F Major, Op.54 (I. In tempo d'un minuetto)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"depressed"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Beethoven_Sonata22_Op54_I/depressed.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.22 in F Major, Op.54 (I. In tempo d'un minuetto)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"fierce"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Beethoven_Sonata22_Op54_I/fierce.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.22 in F Major, Op.54 (I. In tempo d'un minuetto)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"rapidly"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Beethoven_Sonata22_Op54_I/rapidly.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Ludwig van Beethoven</div>
+                                    <div class="work">Piano Sonata No.22 in F Major, Op.54 (I. In tempo d'un minuetto)</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"capricious"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Beethoven_Sonata22_Op54_I/capricious.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="period-divider">
+                            <td colspan="3" class="period-header">Control using arbitrary text</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Scott Joplin</div>
+                                    <div class="work">Rose Leaf Rag</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">Sample from the dataset</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Joplin_Rose_Leaf/dataset.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Scott Joplin</div>
+                                    <div class="work">Rose Leaf Rag</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">Unconditional inference</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Joplin_Rose_Leaf/uncond.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Scott Joplin</div>
+                                    <div class="work">Rose Leaf Rag</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"average and even performance"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Joplin_Rose_Leaf/average.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Scott Joplin</div>
+                                    <div class="work">Rose Leaf Rag</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"like a lullaby song"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Joplin_Rose_Leaf/lullaby.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Scott Joplin</div>
+                                    <div class="work">Rose Leaf Rag</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"a sprinter is running across the field"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Joplin_Rose_Leaf/sprinter.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Scott Joplin</div>
+                                    <div class="work">Rose Leaf Rag</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"a romantic weekend"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Joplin_Rose_Leaf/romantic.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="composition-title">
+                                    <div class="composer">Scott Joplin</div>
+                                    <div class="work">Rose Leaf Rag</div>
+                                </div>
+                            </td>
+                            <td class="text-prompt">"chaotic with abrupt changes"</td>
+                            <td>
+                                <div class="audio-container">
+                                    <audio controls src="samples/control/Joplin_Rose_Leaf/chaotic.mp3"></audio>
+                                    <span class="duration">--:--</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
         <footer class="page-footer">
             <p>Supplementary material for peer review. Not for distribution.</p>
