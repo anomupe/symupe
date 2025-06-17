@@ -231,6 +231,18 @@ body {
     color: #555;
 }
 
+
+/* Results Image Section */
+.results-image {
+    margin: 40px 0;
+}
+
+.results-image h2 {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
 /* Period Divider Styles */
 .period-divider {
     /*background-color: #f0f4f8;*/
